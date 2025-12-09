@@ -1,4 +1,5 @@
 from fastapi import APIRouter, Depends
+from fastapi.responses import JSONResponse
 from app.services.otp_service import OTPService
 from app.services.sms_service import send_sms
 from app.schemas.otp_schema import OTPSchema, OTPValidationSchema
@@ -7,6 +8,7 @@ import logging
 from app.repository.user_repository import (
     get_user_by_phone,
     update_user_verification,
+    check_user_verification,
 )
 from app.core.database import get_db
 
@@ -31,20 +33,55 @@ async def send_otp_endpoint(otp_data: OTPSchema):
 @router.post("/validate")
 def validate_otp_endpoint(otp_data: OTPValidationSchema, db=Depends(get_db)):
     try:
-        if OTPService.validate_otp(otp_data.phone, otp_data.otp):
-            user = get_user_by_phone(otp_data.phone, db)
-            update_user_verification(otp_data.phone, True, db)
-            sub = {
-                "user_id": user.id,
-                "phone": user.phone,
-                "is_verified": user.is_verified,
+        is_verified = check_user_verification(otp_data.phone, db)
+        user = get_user_by_phone(otp_data.phone, db)
+
+        if not user:
+            logger.info(
+                f"User with phone {otp_data.phone} not found for OTP validation"
+            )
+            return JSONResponse(content={"message": "User not found"}, status_code=404)
+
+        if is_verified:
+            access_token = create_access_token(
+                data={
+                    "sub": {
+                        "user_id": user.id,
+                        "username": user.username,
+                        "phone": user.phone,
+                        "is_verified": user.is_verified,
+                    }
+                }
+            )
+            logger.info(f"Phone number {otp_data.phone} is already verified")
+            return JSONResponse(
+                content={"message": "OTP is valid", "access_token": access_token},
+                status_code=200,
+            )
+
+        if not OTPService.validate_otp(otp_data.phone, otp_data.otp):
+            return JSONResponse(content={"message": "OTP is invalid"}, status_code=400)
+
+        update_user_verification(otp_data.phone, True, db)
+
+        access_token = create_access_token(
+            data={
+                "sub": {
+                    "user_id": user.id,
+                    "username": user.username,
+                    "phone": user.phone,
+                    "is_verified": True,
+                }
             }
-            access_token = create_access_token(data={"sub": sub})
-            logger.info(f"OTP validated for phone number {otp_data.phone}")
-            return {"message": "OTP is valid", "access_token": access_token}
-        else:
-            logger.info(f"Invalid OTP attempt for phone number {otp_data.phone}")
-            return {"message": "OTP is invalid"}
+        )
+
+        logger.info(f"OTP validated for phone number {otp_data.phone}")
+        return JSONResponse(
+            content={"message": "OTP is valid", "access_token": access_token},
+            status_code=200,
+        )
     except Exception as e:
         logger.error(f"Error validating OTP for phone number {otp_data.phone}: {e}")
-        return {"message": "Error validating OTP"}
+        return JSONResponse(
+            content={"message": "Error validating OTP"}, status_code=500
+        )

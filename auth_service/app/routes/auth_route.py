@@ -8,6 +8,7 @@ from app.services.auth_services import verify_password, get_password_hash
 from app.repository.user_repository import (
     get_user_by_phone,
     create_user,
+    check_user_verification,
 )
 from app.core.database import get_db
 
@@ -28,7 +29,9 @@ async def login_endpoint(user: LoginSchema, db: Session = Depends(get_db)):
         logger.info(f"Invalid password for user with phone {user.phone}")
         raise HTTPException(status_code=403, detail="Invalid credentials")
 
-    return {"message": "Login successful. Verification pending."}
+    is_verified = check_user_verification(user.phone, db)
+
+    return {"message": "Login successful", "is_verified": is_verified}
 
 
 @router.post("/register")

@@ -20,3 +20,7 @@ def update_user_verification(phone: str, is_verified: bool, db: Session):
         db.commit()
         db.refresh(user)
     return user
+
+def check_user_verification(phone: str, db: Session):
+    user = get_user_by_phone(phone, db)
+    return user.is_verified if user else False
