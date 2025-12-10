@@ -4,6 +4,7 @@ import os
 import time
 from dotenv import load_dotenv
 from pymongo import MongoClient
+from fastapi import HTTPException
 
 load_dotenv()
 
@@ -54,7 +55,7 @@ def pg_connect_with_retry(max_retries=5, delay=5):
             )
             time.sleep(delay)
 
-    raise Exception("Max retries exceeded for PostgreSQL connection")
+    raise HTTPException(status_code=500, detail="Max retries exceeded for PostgreSQL connection")
 
 
 def mongo_connect_with_retry(max_retries=5, delay=5):
@@ -86,4 +87,4 @@ def mongo_connect_with_retry(max_retries=5, delay=5):
             )
             time.sleep(delay)
 
-    raise Exception("Max retries exceeded for MongoDB connection")
+    raise HTTPException(status_code=500, detail="Max retries exceeded for MongoDB connection")

@@ -5,6 +5,7 @@ import os
 from dotenv import load_dotenv
 from app.core.connection import mongo_connect_with_retry, pg_connect_with_retry
 import logging
+from fastapi import HTTPException
 
 load_dotenv()
 
@@ -37,4 +38,4 @@ def init_db_connections():
         logger.info("Database connections established successfully")
     except Exception as e:
         logger.critical(f"Failed to establish database connections: {e}")
-        raise e
+        raise HTTPException(status_code=500, detail="Database connection error")
