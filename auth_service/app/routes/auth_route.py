@@ -81,3 +81,18 @@ async def get_current_user_profile(authorization: str = Header(...)):
         raise HTTPException(status_code=401, detail="Invalid or expired token")
 
     return payload["user"]
+
+
+@router.get("/users/{phone}")
+async def get_user_by_phone_endpoint(phone: str, db: Session = Depends(get_db)):
+    user = get_user_by_phone(phone, db)
+    if user is None:
+        logger.info(f"User with phone {phone} not found")
+        raise HTTPException(status_code=404, detail="User not found")
+    return {
+        "user_id": user.id,
+        "username": user.username,
+        "phone": user.phone,
+        "is_verified": user.is_verified,
+        "is_active": user.is_active,
+    }
