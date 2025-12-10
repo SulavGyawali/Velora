@@ -1,0 +1,32 @@
+services:
+  auth-db:
+    image: postgres:16
+    container_name: wallet-db
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 1
+      POSTGRES_DB: wallet-db
+      
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+  redis:
+    image: redis:7
+    container_name: wallet-redis
+    ports:
+      - "6380:6380"
+    restart: always
+
+  mongodb:
+    image: mongo:6
+    container_name: wallet-mongo
+    ports:
+      - "27017:27017"
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: 1
+volumes:
+  pgdata:

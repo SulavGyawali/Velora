@@ -1,0 +1,21 @@
+2025-12-10 21:14:44,146 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-10 21:14:44,172 - app.core.connection - INFO - MongoDB connection successful
+2025-12-10 21:14:44,172 - app.core.database - INFO - Database connections established successfully
+2025-12-10 21:15:59,776 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-10 21:15:59,807 - app.core.connection - INFO - MongoDB connection successful
+2025-12-10 21:15:59,807 - app.core.database - INFO - Database connections established successfully
+2025-12-10 21:16:11,913 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-10 21:16:11,937 - app.core.connection - INFO - MongoDB connection successful
+2025-12-10 21:16:11,938 - app.core.database - INFO - Database connections established successfully
+2025-12-10 21:17:09,550 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-10 21:17:09,573 - app.core.connection - INFO - MongoDB connection successful
+2025-12-10 21:17:09,573 - app.core.database - INFO - Database connections established successfully
+2025-12-10 21:17:26,117 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-10 21:17:26,144 - app.core.connection - INFO - MongoDB connection successful
+2025-12-10 21:17:26,144 - app.core.database - INFO - Database connections established successfully
+2025-12-10 21:18:49,989 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-10 21:18:50,018 - app.core.connection - INFO - MongoDB connection successful
+2025-12-10 21:18:50,019 - app.core.database - INFO - Database connections established successfully
+2025-12-10 21:18:56,659 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-10 21:18:56,685 - app.core.connection - INFO - MongoDB connection successful
+2025-12-10 21:18:56,685 - app.core.database - INFO - Database connections established successfully
