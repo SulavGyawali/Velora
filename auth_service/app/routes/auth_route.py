@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Header
 from requests import Session
 from app.services.otp_service import OTPService
 from app.services.sms_service import send_sms
@@ -11,6 +11,7 @@ from app.repository.user_repository import (
     check_user_verification,
 )
 from app.core.database import get_db
+from app.services.oauth_service import verify_access_token
 
 logger = logging.getLogger(__name__)
 
@@ -64,3 +65,19 @@ async def register_endpoint(user: RegisterSchema, db: Session = Depends(get_db))
     except Exception as e:
         logger.error(f"Error during registration for phone {user.phone}: {e}")
         raise HTTPException(status_code=500, detail="Internal server error")
+
+
+@router.get("/me")
+async def get_current_user_profile(authorization: str = Header(...)):
+    if not authorization.startswith("Bearer "):
+        logger.info("Authorization header missing or malformed")
+        raise HTTPException(status_code=401, detail="Invalid authorization header")
+
+    token = authorization.split(" ")[1]
+    payload = verify_access_token(token)
+
+    if payload is None:
+        logger.info("Invalid or expired token provided")
+        raise HTTPException(status_code=401, detail="Invalid or expired token")
+
+    return payload["user"]

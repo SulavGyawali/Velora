@@ -7,4 +7,4 @@ class OTPSchema(BaseModel):
         from_attributes = True
 
 class OTPValidationSchema(OTPSchema):
-    otp: str
+    otp: str 

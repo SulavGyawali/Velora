@@ -9,3 +9,4 @@ class LoginSchema(BaseModel):
 
 class RegisterSchema(LoginSchema):
     username: str
+
