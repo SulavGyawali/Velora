@@ -32,10 +32,15 @@ def postgres_db():
 def init_db_connections():
     """Initialize database connections"""
     try:
-        global pg_connection, mongo_db
-        pg_connection = pg_connect_with_retry()
+        postgres_connection = pg_connect_with_retry()
         mongo_db = mongo_connect_with_retry()
         logger.info("Database connections established successfully")
     except Exception as e:
         logger.critical(f"Failed to establish database connections: {e}")
         raise HTTPException(status_code=500, detail="Database connection error")
+
+
+def get_mongo_db():
+    """Get MongoDB database instance"""
+    mongo_db = mongo_connect_with_retry()
+    return mongo_db

@@ -10,8 +10,13 @@ from app.repository.wallet_repository import (
 )
 from app.repository.transaction_repository import log_transaction, get_transaction
 import logging
-from app.schemas.wallet_schema import WalletDebitRequest, WalletCreditRequest
+from app.schemas.wallet_schema import (
+    WalletDebitSchema,
+    WalletCreditSchema,
+    WalletTransactionLogSchema,
+)
 from app.core.dependencies import get_user_id_from_authorization, get_current_user_info
+from app.services.audit_service import log_wallet_creation, log_wallet_transaction
 
 logger = logging.getLogger(__name__)
 
@@ -37,6 +42,11 @@ async def create_wallet_route(
             logger.error(f"Failed to create wallet for user_id {user_id}")
             return {"message": "Failed to create wallet"}
         logger.info(f"Creating wallet for user_id {user_id}")
+        log_wallet_creation(
+            user_id=user_id,
+            wallet_id=wallet["wallet_id"],
+            timestamp=wallet["created_at"].isoformat(),
+        )
         return {"message": "Wallet created", "user_id": user_id}
     except HTTPException as e:
         logger.error(
@@ -78,7 +88,7 @@ async def get_wallet_route(
 
 @router.post("/debit")
 async def debit_wallet_route(
-    debit_request: WalletDebitRequest,
+    debit_request: WalletDebitSchema,
     db: Session = Depends(postgres_db),
 ):
     try:
@@ -128,7 +138,7 @@ async def debit_wallet_route(
 
 @router.post("/credit")
 async def credit_wallet_route(
-    credit_request: WalletCreditRequest,
+    credit_request: WalletCreditSchema,
     db: Session = Depends(postgres_db),
 ):
     try:
@@ -178,3 +188,31 @@ async def credit_wallet_route(
             f"Error crediting wallet for user_id {credit_request.user_id}: {e}"
         )
         return {"message": "Failed to credit wallet", "status": "FAILED"}
+
+
+@router.post("/transaction/log")
+async def log_wallet_transaction_route(
+    transaction_log: WalletTransactionLogSchema,
+):
+    try:
+        event_id = log_wallet_transaction(
+            from_user=transaction_log.from_user,
+            to_user=transaction_log.to_user,
+            amount=transaction_log.amount,
+            timestamp=transaction_log.timestamp,
+            tx_id=transaction_log.tx_id,
+        )
+        if event_id is None:
+            logger.error(f"Failed to log transaction for tx_id {transaction_log.tx_id}")
+            return {"message": "Failed to log transaction"}
+        return {"message": "Transaction logged", "event_id": event_id}
+    except HTTPException as e:
+        logger.error(
+            f"HTTP error while logging transaction for tx_id {transaction_log.tx_id}: {e.detail}"
+        )
+        raise e
+    except Exception as e:
+        logger.error(
+            f"Error logging transaction for tx_id {transaction_log.tx_id}: {e}"
+        )
+        return {"message": "Failed to log transaction"}
