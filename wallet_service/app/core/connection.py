@@ -24,7 +24,7 @@ def pg_connect_with_retry(max_retries=5, delay=5):
         """
 
     CREATE_TRANSACTIONS_TABLE_QUERY = """
-    CREATE TABLE IF NOT EXISTS transactions (id serial PRIMARY KEY, tx_id VARCHAR(50), amount DECIMAL, transaction_type VARCHAR(10), status VARCHAR(20), created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+    CREATE TABLE IF NOT EXISTS transactions (id serial PRIMARY KEY, tx_id VARCHAR(50), user_id INT, amount DECIMAL, transaction_type VARCHAR(10), status VARCHAR(20), created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
         """
 
     retries = 0

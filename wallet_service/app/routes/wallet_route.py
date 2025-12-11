@@ -8,6 +8,7 @@ from app.repository.wallet_repository import (
     debit_wallet,
     credit_wallet,
 )
+from app.repository.transaction_repository import log_transaction, get_transaction
 import logging
 from app.schemas.wallet_schema import WalletDebitRequest, WalletCreditRequest
 from app.core.dependencies import get_user_id_from_authorization, get_current_user_info
@@ -81,18 +82,40 @@ async def debit_wallet_route(
     db: Session = Depends(postgres_db),
 ):
     try:
+        existing_tx = get_transaction(
+            tx_id=debit_request.tx_id,
+            tx_type="debit",
+            db=db,
+            user_id=debit_request.user_id,
+        )
+
+        if existing_tx:
+            logger.info(
+                f"Duplicate debit transaction detected for tx_id {debit_request.tx_id}"
+            )
+            return {"message": "Duplicate transaction"}
+
         debit = debit_wallet(debit_request.user_id, debit_request.amount, db)
         if debit:
             logger.info(
                 f"Debited {debit_request.amount} from wallet of user_id {debit_request.user_id}"
             )
+            log_transaction(
+                user_id=debit_request.user_id,
+                tx_id=debit_request.tx_id,
+                amount=debit_request.amount,
+                tx_type="debit",
+                db=db,
+                status="completed",
+            )
             return {
                 "message": "Wallet debited successfully",
                 "amount": debit_request.amount,
+                "status": "COMPLETED",
             }
         else:
             logger.warning(f"Failed to debit wallet of user_id {debit_request.user_id}")
-            return {"message": "Failed to debit wallet"}
+            return {"message": "Failed to debit wallet", "status": "FAILED"}
     except HTTPException as e:
         logger.error(
             f"HTTP error while debiting wallet for user_id {debit_request.user_id}: {e.detail}"
@@ -100,7 +123,7 @@ async def debit_wallet_route(
         raise e
     except Exception as e:
         logger.error(f"Error debiting wallet for user_id {debit_request.user_id}: {e}")
-        return {"message": "Failed to debit wallet"}
+        return {"message": "Failed to debit wallet", "status": "FAILED"}
 
 
 @router.post("/credit")
@@ -109,20 +132,42 @@ async def credit_wallet_route(
     db: Session = Depends(postgres_db),
 ):
     try:
+        existing_tx = get_transaction(
+            tx_id=credit_request.tx_id,
+            tx_type="credit",
+            db=db,
+            user_id=credit_request.user_id,
+        )
+
+        if existing_tx:
+            logger.info(
+                f"Duplicate credit transaction detected for tx_id {credit_request.tx_id}"
+            )
+            return {"message": "Duplicate transaction"}
+
         credit = credit_wallet(credit_request.user_id, credit_request.amount, db)
         if credit:
             logger.info(
                 f"Credited {credit_request.amount} to wallet of user_id {credit_request.user_id}"
             )
+            log_transaction(
+                user_id=credit_request.user_id,
+                tx_id=credit_request.tx_id,
+                amount=credit_request.amount,
+                tx_type="credit",
+                db=db,
+                status="completed",
+            )
             return {
                 "message": "Wallet credited successfully",
                 "amount": credit_request.amount,
+                "status": "COMPLETED",
             }
         else:
             logger.warning(
                 f"Failed to credit wallet of user_id {credit_request.user_id}"
             )
-            return {"message": "Failed to credit wallet"}
+            return {"message": "Failed to credit wallet", "status": "FAILED"}
     except HTTPException as e:
         logger.error(
             f"HTTP error while crediting wallet for user_id {credit_request.user_id}: {e.detail}"
@@ -132,4 +177,4 @@ async def credit_wallet_route(
         logger.error(
             f"Error crediting wallet for user_id {credit_request.user_id}: {e}"
         )
-        return {"message": "Failed to credit wallet"}
+        return {"message": "Failed to credit wallet", "status": "FAILED"}

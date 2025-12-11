@@ -8,6 +8,7 @@ class Transaction(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     tx_id = Column(String(50), unique=True, index=True, nullable=False)
+    user_id = Column(Integer, nullable=False)
     amount = Column(Integer, nullable=False)
     transaction_type = Column(String(10), nullable=False)
     status = Column(String(20), nullable=False)

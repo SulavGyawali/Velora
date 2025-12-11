@@ -17,10 +17,8 @@ app = FastAPI()
 
 try:
     pg_connection = pg_connect_with_retry()
-    logger = logging.getLogger(__name__)
     logger.info("PostgreSQL connection established successfully")
 except Exception as e:
-    logger = logging.getLogger(__name__)
     logger.critical(f"Failed to establish PostgreSQL connection: {e}")
     raise e
 

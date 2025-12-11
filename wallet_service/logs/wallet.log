@@ -495,3 +495,349 @@ WHERE wallets.user_id = %(user_id_1)s
 2025-12-11 01:34:30,880 - app.routes.wallet_route - INFO - Credited 1050 to wallet of user_id 1
 2025-12-11 01:34:34,182 - app.repository.wallet_repository - INFO - Checked wallet existence for user_id 1: True
 2025-12-11 01:34:34,184 - app.repository.wallet_repository - INFO - Retrieved wallet for user_id 1
+2025-12-11 08:48:52,687 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:48:52,744 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 08:48:52,744 - app.core.database - INFO - Database connections established successfully
+2025-12-11 08:49:08,234 - app.repository.wallet_repository - INFO - Checked wallet existence for user_id 1: True
+2025-12-11 08:49:08,236 - app.repository.wallet_repository - INFO - Retrieved wallet for user_id 1
+2025-12-11 08:50:57,738 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:50:57,774 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 08:50:57,775 - app.core.database - INFO - Database connections established successfully
+2025-12-11 08:51:16,892 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:51:16,920 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 08:51:16,920 - app.core.database - INFO - Database connections established successfully
+2025-12-11 08:51:19,426 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:51:19,458 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 08:51:19,458 - app.core.database - INFO - Database connections established successfully
+2025-12-11 08:51:41,932 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:51:41,967 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 08:51:41,967 - app.core.database - INFO - Database connections established successfully
+2025-12-11 08:51:43,449 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:51:43,478 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 08:51:43,478 - app.core.database - INFO - Database connections established successfully
+2025-12-11 08:51:50,050 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:51:50,078 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 08:51:50,078 - app.core.database - INFO - Database connections established successfully
+2025-12-11 08:51:55,135 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:51:55,165 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 08:51:55,165 - app.core.database - INFO - Database connections established successfully
+2025-12-11 08:52:00,455 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:52:00,485 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 08:52:00,485 - app.core.database - INFO - Database connections established successfully
+2025-12-11 08:52:05,977 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:52:06,013 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 08:52:06,014 - app.core.database - INFO - Database connections established successfully
+2025-12-11 08:52:08,700 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:52:08,731 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 08:52:08,731 - app.core.database - INFO - Database connections established successfully
+2025-12-11 08:52:09,627 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:52:09,657 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 08:52:09,657 - app.core.database - INFO - Database connections established successfully
+2025-12-11 08:52:12,646 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:52:12,680 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 08:52:12,680 - app.core.database - INFO - Database connections established successfully
+2025-12-11 08:52:56,004 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:52:56,007 - app.core.connection - ERROR - PostgreSQL connection failed: syntax error at or near ","
+LINE 2: ...ctions (id serial PRIMARY KEY, tx_id VARCHAR(50), , amount D...
+                                                             ^
+
+2025-12-11 08:52:56,007 - app.core.connection - INFO - Retrying in 5 seconds... (Attempt 1/5)
+2025-12-11 08:53:01,018 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:53:01,020 - app.core.connection - ERROR - PostgreSQL connection failed: syntax error at or near ","
+LINE 2: ...ctions (id serial PRIMARY KEY, tx_id VARCHAR(50), , amount D...
+                                                             ^
+
+2025-12-11 08:53:01,021 - app.core.connection - INFO - Retrying in 5 seconds... (Attempt 2/5)
+2025-12-11 08:53:06,033 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:53:06,036 - app.core.connection - ERROR - PostgreSQL connection failed: syntax error at or near ","
+LINE 2: ...ctions (id serial PRIMARY KEY, tx_id VARCHAR(50), , amount D...
+                                                             ^
+
+2025-12-11 08:53:06,036 - app.core.connection - INFO - Retrying in 5 seconds... (Attempt 3/5)
+2025-12-11 08:53:11,047 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:53:11,050 - app.core.connection - ERROR - PostgreSQL connection failed: syntax error at or near ","
+LINE 2: ...ctions (id serial PRIMARY KEY, tx_id VARCHAR(50), , amount D...
+                                                             ^
+
+2025-12-11 08:53:11,050 - app.core.connection - INFO - Retrying in 5 seconds... (Attempt 4/5)
+2025-12-11 08:53:16,062 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:53:16,065 - app.core.connection - ERROR - PostgreSQL connection failed: syntax error at or near ","
+LINE 2: ...ctions (id serial PRIMARY KEY, tx_id VARCHAR(50), , amount D...
+                                                             ^
+
+2025-12-11 08:53:16,065 - app.core.connection - INFO - Retrying in 5 seconds... (Attempt 5/5)
+2025-12-11 08:53:21,066 - app.core.database - CRITICAL - Failed to establish database connections: 500: Max retries exceeded for PostgreSQL connection
+2025-12-11 08:53:22,182 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:53:22,215 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 08:53:22,215 - app.core.database - INFO - Database connections established successfully
+2025-12-11 08:54:27,706 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:54:27,758 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 08:54:27,758 - app.core.database - INFO - Database connections established successfully
+2025-12-11 08:54:59,336 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:54:59,365 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 08:54:59,366 - app.core.database - INFO - Database connections established successfully
+2025-12-11 08:55:21,255 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:55:21,282 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 08:55:21,283 - app.core.database - INFO - Database connections established successfully
+2025-12-11 08:55:27,232 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:55:27,263 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 08:55:27,263 - app.core.database - INFO - Database connections established successfully
+2025-12-11 08:55:30,987 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:55:31,015 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 08:55:31,016 - app.core.database - INFO - Database connections established successfully
+2025-12-11 08:55:38,191 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:55:38,218 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 08:55:38,218 - app.core.database - INFO - Database connections established successfully
+2025-12-11 08:56:00,920 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:56:00,958 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 08:56:00,958 - app.core.database - INFO - Database connections established successfully
+2025-12-11 08:56:08,762 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:56:08,799 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 08:56:08,800 - app.core.database - INFO - Database connections established successfully
+2025-12-11 08:56:16,583 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:56:16,620 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 08:56:16,621 - app.core.database - INFO - Database connections established successfully
+2025-12-11 08:56:23,571 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:56:23,598 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 08:56:23,599 - app.core.database - INFO - Database connections established successfully
+2025-12-11 08:56:31,989 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:56:32,020 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 08:56:32,020 - app.core.database - INFO - Database connections established successfully
+2025-12-11 08:56:33,920 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:56:33,953 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 08:56:33,953 - app.core.database - INFO - Database connections established successfully
+2025-12-11 08:57:08,793 - app.repository.wallet_repository - INFO - Checked wallet existence for user_id 1: True
+2025-12-11 08:57:08,794 - app.repository.wallet_repository - INFO - Retrieved wallet for user_id 1
+2025-12-11 08:57:13,386 - app.repository.wallet_repository - INFO - Checked wallet existence for user_id 1: True
+2025-12-11 08:57:13,387 - app.repository.wallet_repository - INFO - Retrieved wallet for user_id 1
+2025-12-11 08:57:57,317 - app.repository.wallet_repository - INFO - Debited 1000 from wallet of user_id 1
+2025-12-11 08:57:57,317 - app.routes.wallet_route - INFO - Debited 1000 from wallet of user_id 1
+2025-12-11 08:57:57,318 - app.repository.transaction_repository - ERROR - Error logging transaction for user_id 1 with tx_id tx_123: 'tx_type' is an invalid keyword argument for Transaction
+2025-12-11 08:57:57,318 - app.routes.wallet_route - ERROR - HTTP error while debiting wallet for user_id 1: Internal server error
+2025-12-11 08:58:58,363 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:58:58,396 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 08:58:58,396 - app.core.database - INFO - Database connections established successfully
+2025-12-11 08:59:02,562 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:59:02,595 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 08:59:02,596 - app.core.database - INFO - Database connections established successfully
+2025-12-11 08:59:07,021 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:59:07,051 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 08:59:07,051 - app.core.database - INFO - Database connections established successfully
+2025-12-11 08:59:08,056 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 08:59:08,085 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 08:59:08,085 - app.core.database - INFO - Database connections established successfully
+2025-12-11 08:59:09,677 - app.repository.wallet_repository - WARNING - Insufficient balance for user_id 1 or wallet not found
+2025-12-11 08:59:09,677 - app.repository.wallet_repository - ERROR - Error debiting wallet for user_id 1: 400: Insufficient balance or wallet not found
+2025-12-11 08:59:09,677 - app.routes.wallet_route - ERROR - HTTP error while debiting wallet for user_id 1: Internal server error
+2025-12-11 08:59:20,575 - app.repository.wallet_repository - INFO - Checked wallet existence for user_id 1: True
+2025-12-11 08:59:20,576 - app.repository.wallet_repository - INFO - Retrieved wallet for user_id 1
+2025-12-11 08:59:29,553 - app.repository.wallet_repository - INFO - Credited 1000 to wallet of user_id 1
+2025-12-11 08:59:29,554 - app.routes.wallet_route - INFO - Credited 1000 to wallet of user_id 1
+2025-12-11 08:59:29,554 - app.repository.transaction_repository - ERROR - Error logging transaction for user_id 1 with tx_id tx_123: 'tx_type' is an invalid keyword argument for Transaction
+2025-12-11 08:59:29,555 - app.routes.wallet_route - ERROR - HTTP error while crediting wallet for user_id 1: Internal server error
+2025-12-11 09:00:00,983 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 09:00:01,017 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 09:00:01,018 - app.core.database - INFO - Database connections established successfully
+2025-12-11 09:00:05,742 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 09:00:05,778 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 09:00:05,778 - app.core.database - INFO - Database connections established successfully
+2025-12-11 09:00:05,816 - app.repository.wallet_repository - INFO - Credited 1000 to wallet of user_id 1
+2025-12-11 09:00:05,817 - app.routes.wallet_route - INFO - Credited 1000 to wallet of user_id 1
+2025-12-11 09:00:39,427 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 09:00:39,454 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 09:00:39,455 - app.core.database - INFO - Database connections established successfully
+2025-12-11 09:01:10,015 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 09:01:10,047 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 09:01:10,047 - app.core.database - INFO - Database connections established successfully
+2025-12-11 09:01:17,682 - app.repository.wallet_repository - INFO - Debited 1000 from wallet of user_id 1
+2025-12-11 09:01:17,682 - app.routes.wallet_route - INFO - Debited 1000 from wallet of user_id 1
+2025-12-11 09:01:31,706 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 09:01:31,737 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 09:01:31,737 - app.core.database - INFO - Database connections established successfully
+2025-12-11 09:01:33,986 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 09:01:34,012 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 09:01:34,012 - app.core.database - INFO - Database connections established successfully
+2025-12-11 09:01:37,768 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 09:01:37,797 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 09:01:37,797 - app.core.database - INFO - Database connections established successfully
+2025-12-11 09:01:41,703 - app.repository.wallet_repository - INFO - Credited 1000 to wallet of user_id 1
+2025-12-11 09:01:41,704 - app.routes.wallet_route - INFO - Credited 1000 to wallet of user_id 1
+2025-12-11 09:01:41,716 - app.repository.transaction_repository - INFO - Logged credit transaction for user_id 1 with tx_id tx_123 and amount 1000
+2025-12-11 09:02:08,078 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 09:02:08,110 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 09:02:08,110 - app.core.database - INFO - Database connections established successfully
+2025-12-11 09:02:16,917 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 09:02:16,945 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 09:02:16,946 - app.core.database - INFO - Database connections established successfully
+2025-12-11 09:02:18,066 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 09:02:18,095 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 09:02:18,096 - app.core.database - INFO - Database connections established successfully
+2025-12-11 09:02:44,270 - app.repository.wallet_repository - INFO - Credited 100 to wallet of user_id 1
+2025-12-11 09:02:44,270 - app.routes.wallet_route - INFO - Credited 100 to wallet of user_id 1
+2025-12-11 09:02:44,280 - app.repository.transaction_repository - INFO - Logged credit transaction for user_id 1 with tx_id tx_123 and amount 100
+2025-12-11 09:03:07,731 - app.repository.wallet_repository - INFO - Debited 1000 from wallet of user_id 1
+2025-12-11 09:03:07,731 - app.routes.wallet_route - INFO - Debited 1000 from wallet of user_id 1
+2025-12-11 09:03:07,731 - app.routes.wallet_route - ERROR - Error debiting wallet for user_id 1: log_transaction() missing 1 required positional argument: 'status'
+2025-12-11 09:03:15,420 - app.repository.wallet_repository - INFO - Checked wallet existence for user_id 1: True
+2025-12-11 09:03:15,421 - app.repository.wallet_repository - INFO - Retrieved wallet for user_id 1
+2025-12-11 09:03:51,124 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 09:03:51,151 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 09:03:51,151 - app.core.database - INFO - Database connections established successfully
+2025-12-11 09:03:52,132 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 09:03:52,163 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 09:03:52,163 - app.core.database - INFO - Database connections established successfully
+2025-12-11 09:03:54,225 - app.repository.wallet_repository - INFO - Debited 1000 from wallet of user_id 1
+2025-12-11 09:03:54,225 - app.routes.wallet_route - INFO - Debited 1000 from wallet of user_id 1
+2025-12-11 09:03:54,236 - app.repository.transaction_repository - INFO - Logged debit transaction for user_id 1 with tx_id tx_123 and amount 1000
+2025-12-11 09:03:57,295 - app.repository.wallet_repository - INFO - Checked wallet existence for user_id 1: True
+2025-12-11 09:03:57,297 - app.repository.wallet_repository - INFO - Retrieved wallet for user_id 1
+2025-12-11 12:09:07,911 - app.core.dependencies - ERROR - Failed to fetch user info from auth service
+2025-12-11 12:09:07,917 - app.core.dependencies - ERROR - Error fetching user info: 401: Failed to fetch user info
+2025-12-11 12:09:28,173 - app.core.dependencies - ERROR - Failed to fetch user info from auth service
+2025-12-11 12:09:28,173 - app.core.dependencies - ERROR - Error fetching user info: 401: Failed to fetch user info
+2025-12-11 12:10:04,503 - app.repository.wallet_repository - INFO - Checked wallet existence for user_id None: False
+2025-12-11 12:10:04,504 - app.routes.wallet_route - INFO - No wallet found for user_id None
+2025-12-11 12:10:59,536 - app.repository.wallet_repository - INFO - Checked wallet existence for user_id 1: True
+2025-12-11 12:10:59,539 - app.repository.wallet_repository - INFO - Retrieved wallet for user_id 1
+2025-12-11 12:11:59,957 - app.repository.wallet_repository - INFO - Checked wallet existence for user_id 1: True
+2025-12-11 12:11:59,959 - app.repository.wallet_repository - INFO - Retrieved wallet for user_id 1
+2025-12-11 12:12:09,586 - app.repository.wallet_repository - INFO - Credited 1000 to wallet of user_id 1
+2025-12-11 12:12:09,586 - app.routes.wallet_route - INFO - Credited 1000 to wallet of user_id 1
+2025-12-11 12:12:09,604 - app.repository.transaction_repository - INFO - Logged credit transaction for user_id 1 with tx_id tx_123 and amount 1000
+2025-12-11 13:05:42,642 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:05:42,680 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:05:42,680 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:07:06,211 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:07:06,248 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:07:06,249 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:07:07,201 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:07:07,228 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:07:07,228 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:07:11,047 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:07:11,082 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:07:11,082 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:07:12,046 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:07:12,076 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:07:12,076 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:07:14,445 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:07:14,472 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:07:14,472 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:07:21,684 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:07:21,723 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:07:21,723 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:08:21,490 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:08:21,521 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:08:21,521 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:08:27,091 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:08:27,122 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:08:27,123 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:08:30,743 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:08:30,782 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:08:30,782 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:08:35,937 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:08:35,964 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:08:35,964 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:08:55,903 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:08:55,928 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:08:55,929 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:08:57,819 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:08:57,850 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:08:57,851 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:08:59,819 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:08:59,846 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:08:59,846 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:09:02,534 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:09:02,561 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:09:02,561 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:09:07,356 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:09:07,384 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:09:07,384 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:09:10,658 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:09:10,685 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:09:10,685 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:09:13,343 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:09:13,369 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:09:13,370 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:09:40,196 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:09:40,232 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:09:40,232 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:09:46,465 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:09:46,501 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:09:46,501 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:09:51,559 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:09:51,593 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:09:51,593 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:09:54,270 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:09:54,300 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:09:54,301 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:09:58,877 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:09:58,905 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:09:58,906 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:10:02,501 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:10:02,533 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:10:02,533 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:10:09,168 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:10:09,202 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:10:09,202 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:10:13,770 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:10:13,806 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:10:13,806 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:10:27,048 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:10:27,077 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:10:27,077 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:10:29,822 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:10:29,855 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:10:29,856 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:10:31,683 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:10:31,709 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:10:31,709 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:10:34,356 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:10:34,385 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:10:34,386 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:10:38,151 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:10:38,181 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:10:38,181 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:18:03,958 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:18:03,988 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:18:03,988 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:22:41,276 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:22:41,305 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:22:41,305 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:22:45,766 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:22:45,798 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:22:45,798 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:22:56,660 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:22:56,687 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:22:56,687 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:23:01,890 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:23:01,916 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:23:01,916 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:23:05,760 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:23:05,787 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:23:05,787 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:23:08,465 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:23:08,495 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:23:08,496 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:23:09,658 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:23:09,687 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:23:09,687 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:26:44,731 - app.repository.transaction_repository - ERROR - Error retrieving transaction with tx_id tx_9e731b3a-44ae-401a-8e36-7fc55a494b73: 'NoneType' object has no attribute 'filter'
+2025-12-11 13:26:44,732 - app.routes.wallet_route - ERROR - HTTP error while debiting wallet for user_id 1: Internal server error
+2025-12-11 13:28:02,459 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:28:02,485 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:28:02,486 - app.core.database - INFO - Database connections established successfully
+2025-12-11 13:28:06,643 - app.repository.transaction_repository - WARNING - No transaction found with tx_id tx_0161901e-1e1c-47d7-aee8-a7ef73af1486
+2025-12-11 13:28:06,659 - app.repository.wallet_repository - INFO - Debited 200 from wallet of user_id 1
+2025-12-11 13:28:06,659 - app.routes.wallet_route - INFO - Debited 200 from wallet of user_id 1
+2025-12-11 13:28:06,670 - app.repository.transaction_repository - INFO - Logged debit transaction for user_id 1 with tx_id tx_0161901e-1e1c-47d7-aee8-a7ef73af1486 and amount 200
+2025-12-11 13:28:06,678 - app.repository.transaction_repository - WARNING - No transaction found with tx_id tx_0161901e-1e1c-47d7-aee8-a7ef73af1486
+2025-12-11 13:28:06,680 - app.repository.wallet_repository - WARNING - Wallet not found for user_id 2
+2025-12-11 13:28:06,680 - app.repository.wallet_repository - ERROR - Error crediting wallet for user_id 2: 404: Wallet not found
+2025-12-11 13:28:06,680 - app.routes.wallet_route - ERROR - HTTP error while crediting wallet for user_id 2: Internal server error
+2025-12-11 13:28:06,687 - app.repository.transaction_repository - WARNING - No transaction found with tx_id tx_0161901e-1e1c-47d7-aee8-a7ef73af1486
+2025-12-11 13:28:06,691 - app.repository.wallet_repository - INFO - Credited 200 to wallet of user_id 1
+2025-12-11 13:28:06,692 - app.routes.wallet_route - INFO - Credited 200 to wallet of user_id 1
+2025-12-11 13:28:06,698 - app.repository.transaction_repository - INFO - Logged credit transaction for user_id 1 with tx_id tx_0161901e-1e1c-47d7-aee8-a7ef73af1486 and amount 200
+2025-12-11 13:35:36,550 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-11 13:35:36,620 - app.core.connection - INFO - MongoDB connection successful
+2025-12-11 13:35:36,620 - app.core.database - INFO - Database connections established successfully

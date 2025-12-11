@@ -13,9 +13,4 @@ class UserCreateSchema(UserSchema):
 class UserLoginSchema(UserSchema):
     password: str
 
-class UserProfileSchema(BaseModel):
-    username: str
-    phone: str
 
-    class Config:
-        from_attributes = True

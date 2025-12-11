@@ -9,10 +9,10 @@ logger = logging.getLogger(__name__)
 def pg_connect_with_retry(max_retries=5, delay=5):
 
     POSTGRES_HOST = os.getenv("POSTGRES_HOST", "localhost")
-    POSTGRES_PORT = os.getenv("POSTGRES_PORT", "5433")
+    POSTGRES_PORT = os.getenv("POSTGRES_PORT", "5432")
     POSTGRES_USER = os.getenv("POSTGRES_USER", "admin")
     POSTGRES_PASSWORD = os.getenv("POSTGRES_PASSWORD", "1")
-    POSTGRES_DB = os.getenv("POSTGRES_DB", "wallet-db")
+    POSTGRES_DB = os.getenv("POSTGRES_DB", "auth-db")
 
     CREATE_USERS_TABLE_QUERY = """
     CREATE TABLE IF NOT EXISTS users (id serial PRIMARY KEY, username VARCHAR(50), phone VARCHAR(10), password VARCHAR(255), created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, is_verified BOOLEAN DEFAULT FALSE, is_active BOOLEAN DEFAULT TRUE);
