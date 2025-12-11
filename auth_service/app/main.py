@@ -2,53 +2,27 @@ import psycopg2 as pg
 from fastapi import FastAPI
 from dotenv import load_dotenv
 import os
-import logging
+from app.core.connection import pg_connect_with_retry
 from app.core.logging import setup_logging
 import time
 from app.routes import otp_route, auth_route
+import logging
 
 load_dotenv()
 setup_logging()
 
 logger = logging.getLogger(__name__)
 
-POSTGRES_HOST = os.getenv("POSTGRES_HOST", "localhost")
-POSTGRES_PORT = os.getenv("POSTGRES_PORT", "5432")
-POSTGRES_USER = os.getenv("POSTGRES_USER", "admin")
-POSTGRES_PASSWORD = os.getenv("POSTGRES_PASSWORD", "1")
-POSTGRES_DB = os.getenv("POSTGRES_DB", "auth-db")
-
-CREATE_USERS_TABLE_QUERY = """
-CREATE TABLE IF NOT EXISTS users (id serial PRIMARY KEY, username VARCHAR(50), phone VARCHAR(10), password VARCHAR(255), created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, is_verified BOOLEAN DEFAULT FALSE, is_active BOOLEAN DEFAULT TRUE);
-"""
-
 app = FastAPI()
 
-while True:
-    try:
-
-        conn = pg.connect(
-            host=POSTGRES_HOST,
-            port=int(POSTGRES_PORT),
-            user=POSTGRES_USER,
-            password=POSTGRES_PASSWORD,
-            database=POSTGRES_DB,
-        )
-
-        cursor = conn.cursor()
-        cursor.execute(CREATE_USERS_TABLE_QUERY)
-        conn.commit()
-        cursor.close()
-
-        conn.close()
-        logger.info("Database connection successful")
-
-        break
-    except Exception as e:
-        logger.error(f"Database connection failed: {e}")
-        logger.info("Retrying in 5 seconds...")
-
-        time.sleep(5)
+try:
+    pg_connection = pg_connect_with_retry()
+    logger = logging.getLogger(__name__)
+    logger.info("PostgreSQL connection established successfully")
+except Exception as e:
+    logger = logging.getLogger(__name__)
+    logger.critical(f"Failed to establish PostgreSQL connection: {e}")
+    raise e
 
 
 @app.get("/")
