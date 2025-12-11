@@ -25,6 +25,7 @@ def credit_user(tx_id: str, user_id: str, amount: float):
         )
         response.raise_for_status()
         logger.info(f"Credited {amount} to user {user_id} in transaction {tx_id}")
+
         return response.json()
     except requests.RequestException as e:
         logger.error(f"Error crediting user {user_id}: {e}")
@@ -43,6 +44,7 @@ def debit_user(tx_id: str, user_id: str, amount: float):
         )
         response.raise_for_status()
         logger.info(f"Debited {amount} from user {user_id} in transaction {tx_id}")
+
         return response.json()
     except requests.RequestException as e:
         logger.error(f"Error debiting user {user_id}: {e}")
@@ -75,3 +77,41 @@ def transaction(from_user_id: str, to_user_id: str, amount: float):
         "amount": amount,
         "status": "SUCCESS",
     }
+
+
+def get_user_id_by_phone(phone: str):
+    try:
+        response = requests.get(
+            f"http://localhost:8001/auth/users/{phone}",
+        )
+        response.raise_for_status()
+        logger.info(f"Fetched user info for phone {phone}")
+        return response.json().get("user_id")
+    except requests.RequestException as e:
+        logger.error(f"Error fetching user by phone {phone}: {e}")
+        return None
+    
+def log_transaction(
+    from_user: str,
+    to_user: str,
+    amount: float,
+    timestamp: str,
+    tx_id: str,
+):
+    try:
+        response = requests.post(
+            f"{wallet_service_url}/transaction/log",
+            json={
+                "from_user": from_user,
+                "to_user": to_user,
+                "amount": amount,
+                "timestamp": timestamp,
+                "tx_id": tx_id,
+            },
+        )
+        response.raise_for_status()
+        logger.info(f"Logged transaction {tx_id} successfully")
+        return response.json().get("event_id")
+    except requests.RequestException as e:
+        logger.error(f"Error logging transaction {tx_id}: {e}")
+        return None
