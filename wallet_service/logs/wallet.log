@@ -1,0 +1,3 @@
+2025-12-15 18:13:14,467 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-15 18:13:14,495 - app.core.connection - INFO - MongoDB connection successful
+2025-12-15 18:13:14,495 - app.core.database - INFO - Database connections established successfully

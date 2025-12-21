@@ -19,18 +19,18 @@ router = APIRouter(prefix="/auth", tags=["auth"])
 
 
 @router.post("/login")
-async def login_endpoint(user: LoginSchema, db: Session = Depends(get_db)):
-    user = get_user_by_phone(user.phone, db)
+async def login_endpoint(User: LoginSchema, db: Session = Depends(get_db)):
+    user = get_user_by_phone(User.phone, db)
 
     if user is None:
-        logger.info(f"User with phone {user.phone} not found")
+        logger.info(f"User with phone {User.phone} not found")
         raise HTTPException(status_code=403, detail="Invalid credentials")
 
-    if not verify_password(user.password, user.hashed_password):
-        logger.info(f"Invalid password for user with phone {user.phone}")
+    if not verify_password(User.password, user.password):
+        logger.info(f"Invalid password for user with phone {User.phone}")
         raise HTTPException(status_code=403, detail="Invalid credentials")
 
-    is_verified = check_user_verification(user.phone, db)
+    is_verified = check_user_verification(User.phone, db)
 
     return {"message": "Login successful", "is_verified": is_verified}
 

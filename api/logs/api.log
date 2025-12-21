@@ -1,0 +1,10 @@
+2025-12-15 18:16:17,030 - app.routes.auth_route - ERROR - Login failed: Internal Server Error
+2025-12-15 18:18:51,124 - app.routes.auth_route - ERROR - Login failed: Internal Server Error
+2025-12-15 18:19:19,074 - app.routes.auth_route - INFO - Login successful
+2025-12-15 18:21:34,164 - app.routes.auth_route - INFO - Login successful
+2025-12-15 18:22:36,337 - app.routes.auth_route - INFO - Login successful
+2025-12-15 18:23:42,336 - app.routes.auth_route - INFO - Login successful
+2025-12-15 18:27:05,312 - app.routes.auth_route - ERROR - Login failed: {"detail":"Invalid credentials"}
+2025-12-15 18:27:25,121 - app.routes.auth_route - INFO - Registration successful
+2025-12-15 18:31:10,758 - app.routes.auth_route - INFO - Registration successful
+2025-12-15 18:33:03,635 - app.routes.auth_route - INFO - OTP validation successful
