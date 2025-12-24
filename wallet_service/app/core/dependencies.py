@@ -12,7 +12,7 @@ def get_current_user_info(token: str = Header(...)) -> dict:
             raise HTTPException(status_code=401, detail="Authorization header missing")
         
         response = requests.get(
-            f"http://localhost:8001/auth/me",
+            f"http://auth-services:8001/auth/me",
             headers={"Authorization": f"Bearer {token}"},
         )
         if response.status_code == 200:

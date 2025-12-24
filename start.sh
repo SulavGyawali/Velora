@@ -1,0 +1,20 @@
+cd auth_service
+docker compose up -d --build
+echo "Auth Service started"
+cd ../wallet_service
+docker compose up -d --build
+echo "Wallet Service started"
+cd ../orchestrator_service
+docker compose up -d --build
+echo "Orchestrator Service started"
+
+docker network create microservices_network
+
+docker network connect microservices_network auth-service
+echo "Auth Service connected to microservices_network"
+docker network connect microservices_network wallet-service
+echo "Wallet Service connected to microservices_network"
+docker network connect microservices_network orchestrator-service
+echo "Orchestrator Service connected to microservices_network"
+
+echo "All services are up and running on microservices_network"

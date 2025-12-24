@@ -1,4 +1,11 @@
 services:
-
+  app:
+    build: .
+    container_name: orchestrator-service
+    ports:
+      - "8003:8003"
+    volumes:
+      - ./:/app
+    restart: always
 volumes:
   pgdata:

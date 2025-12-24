@@ -1,5 +1,28 @@
 services:
-  auth-db:
+
+  app:
+    build: .
+    container_name: wallet-service
+    ports:
+      - "8002:8002"
+    depends_on:
+      - wallet-db
+      - redis
+      - mongodb
+
+    environment:
+      - DATABASE_URL=postgresql://admin:1@wallet-db:5433/wallet-db
+      - REDIS_HOST=wallet-redis
+      - REDIS_PORT=6380
+      - MONGO_HOST=wallet-mongo
+      - MONGO_PORT=27017
+      - MONGO_USER=admin
+      - MONGO_PASSWORD=1
+
+    volumes:
+      - ./:/app
+    restart: always
+  wallet-db:
     image: postgres:16
     container_name: wallet-db
     restart: always
@@ -7,7 +30,7 @@ services:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: 1
       POSTGRES_DB: wallet-db
-      
+
     ports:
       - "5433:5432"
     volumes:
