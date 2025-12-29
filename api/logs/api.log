@@ -8,3 +8,33 @@
 2025-12-15 18:27:25,121 - app.routes.auth_route - INFO - Registration successful
 2025-12-15 18:31:10,758 - app.routes.auth_route - INFO - Registration successful
 2025-12-15 18:33:03,635 - app.routes.auth_route - INFO - OTP validation successful
+2025-12-25 05:54:43,105 - app.routes.auth_route - INFO - OTP validation successful
+2025-12-25 05:54:51,991 - app.routes.auth_route - ERROR - Registration failed: {"detail":"Internal server error"}
+2025-12-25 05:55:43,007 - app.routes.auth_route - INFO - OTP validation successful
+2025-12-25 05:59:58,203 - app.routes.wallet_route - ERROR - Authorization token missing
+2025-12-25 06:00:09,534 - app.routes.wallet_route - ERROR - Failed to fetch wallet info: {"detail":[{"type":"missing","loc":["header","token"],"msg":"Field required","input":null}]}
+2025-12-25 06:01:18,352 - app.routes.wallet_route - ERROR - Failed to fetch wallet info: {"detail":[{"type":"missing","loc":["header","token"],"msg":"Field required","input":null}]}
+2025-12-25 06:01:31,996 - app.routes.wallet_route - ERROR - Failed to fetch wallet info: {"detail":[{"type":"missing","loc":["header","token"],"msg":"Field required","input":null}]}
+2025-12-25 06:08:08,791 - app.routes.auth_route - INFO - Registration successful
+2025-12-25 06:08:14,486 - app.routes.auth_route - ERROR - OTP validation failed: {"message":"OTP is invalid"}
+2025-12-25 06:08:39,438 - app.routes.auth_route - INFO - OTP validation successful
+2025-12-25 06:09:05,865 - app.routes.auth_route - INFO - OTP validation successful
+2025-12-25 06:11:27,792 - app.routes.auth_route - INFO - Registration successful
+2025-12-25 06:11:52,528 - app.routes.auth_route - INFO - OTP validation successful
+2025-12-25 06:21:42,932 - app.routes.auth_route - INFO - Registration successful
+2025-12-25 06:21:56,493 - app.routes.auth_route - INFO - OTP validation successful
+2025-12-25 06:32:11,071 - app.routes.wallet_route - ERROR - Failed to create wallet: {"detail":"Internal server error"}
+2025-12-25 06:32:42,672 - app.routes.wallet_route - ERROR - Failed to create wallet: {"detail":"Internal server error"}
+2025-12-25 06:33:21,540 - app.routes.auth_route - INFO - Registration successful
+2025-12-25 06:33:35,271 - app.routes.auth_route - INFO - OTP validation successful
+2025-12-25 06:33:53,883 - app.routes.wallet_route - ERROR - Failed to create wallet: {"detail":"Internal server error"}
+2025-12-25 06:34:36,185 - app.routes.auth_route - ERROR - Registration failed: {"detail":"Internal server error"}
+2025-12-25 06:34:56,034 - app.routes.auth_route - INFO - OTP validation successful
+2025-12-25 06:35:02,690 - app.routes.wallet_route - ERROR - Failed to fetch wallet info: {"detail":"Internal server error"}
+2025-12-25 06:35:11,467 - app.routes.wallet_route - ERROR - Failed to create wallet: {"detail":"Internal server error"}
+2025-12-25 06:36:37,342 - app.routes.wallet_route - ERROR - Failed to create wallet: {"detail":"Internal server error"}
+2025-12-25 06:41:47,430 - app.routes.wallet_route - INFO - Wallet created successfully
+2025-12-25 06:44:02,211 - app.routes.auth_route - INFO - Registration successful
+2025-12-25 06:44:17,116 - app.routes.auth_route - INFO - OTP validation successful
+2025-12-25 06:44:41,759 - app.routes.wallet_route - INFO - Wallet created successfully
+2025-12-25 06:44:47,172 - app.routes.wallet_route - ERROR - Failed to fetch wallet info: {"detail":[{"type":"missing","loc":["query","token"],"msg":"Field required","input":null}]}

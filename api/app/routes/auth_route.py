@@ -12,7 +12,10 @@ logger = logging.getLogger(__name__)
 AUTH_URL = os.getenv("AUTH_URL", "http://localhost:8001/auth")
 OTP_URL = os.getenv("OTP_SERVICE_URL", "http://localhost:8001/otp")
 
-router = APIRouter()
+router = APIRouter(
+    prefix="/auth",
+    tags=["auth"],
+)
 
 
 @router.post("/login")

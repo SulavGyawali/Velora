@@ -5,14 +5,17 @@ import requests
 logger = logging.getLogger(__name__)
 
 
-def get_current_user_info(token: str = Header(...)) -> dict:
+def get_current_user_info(token: str) -> dict:
     try:
+
         if not token:
-            logger.warning("Authorization header missing")
-            raise HTTPException(status_code=401, detail="Authorization header missing")
-        
+            logger.warning("Token missing in Authorization header")
+            raise HTTPException(
+                status_code=401, detail="Token missing in Authorization header"
+            )
+
         response = requests.get(
-            f"http://auth-services:8001/auth/me",
+            f"http://auth-service:8001/auth/me",
             headers={"Authorization": f"Bearer {token}"},
         )
         if response.status_code == 200:

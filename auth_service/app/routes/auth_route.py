@@ -68,12 +68,12 @@ async def register_endpoint(user: RegisterSchema, db: Session = Depends(get_db))
 
 
 @router.get("/me")
-async def get_current_user_profile(authorization: str = Header(...)):
-    if not authorization.startswith("Bearer "):
+async def get_current_user_profile(Authorization: str = Header(...)):
+    if not Authorization.startswith("Bearer "):
         logger.info("Authorization header missing or malformed")
         raise HTTPException(status_code=401, detail="Invalid authorization header")
 
-    token = authorization.split(" ")[1]
+    token = Authorization.split(" ")[1]
     payload = verify_access_token(token)
 
     if payload is None:

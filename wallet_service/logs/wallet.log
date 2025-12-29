@@ -1,80 +1,81 @@
-2025-12-15 18:13:14,467 - app.core.connection - INFO - PostgreSQL connection successful
-2025-12-15 18:13:14,495 - app.core.connection - INFO - MongoDB connection successful
-2025-12-15 18:13:14,495 - app.core.database - INFO - Database connections established successfully
-2025-12-24 07:36:18,217 - app.core.connection - ERROR - PostgreSQL connection failed: connection to server at "wallet-db" (172.18.0.3), port 5433 failed: Connection refused
+2025-12-25 00:42:33,215 - app.core.connection - ERROR - PostgreSQL connection failed: connection to server at "wallet-db" (172.19.0.2), port 5433 failed: Connection refused
 	Is the server running on that host and accepting TCP/IP connections?
 
-2025-12-24 07:36:18,218 - app.core.connection - INFO - Retrying in 5 seconds... (Attempt 1/5)
-2025-12-24 07:36:23,220 - app.core.connection - ERROR - PostgreSQL connection failed: connection to server at "wallet-db" (172.18.0.3), port 5433 failed: Connection refused
+2025-12-25 00:42:33,215 - app.core.connection - INFO - Retrying in 5 seconds... (Attempt 4/5)
+2025-12-25 00:42:38,218 - app.core.connection - ERROR - PostgreSQL connection failed: connection to server at "wallet-db" (172.19.0.2), port 5433 failed: Connection refused
 	Is the server running on that host and accepting TCP/IP connections?
 
-2025-12-24 07:36:23,220 - app.core.connection - INFO - Retrying in 5 seconds... (Attempt 2/5)
-2025-12-24 07:36:28,222 - app.core.connection - ERROR - PostgreSQL connection failed: connection to server at "wallet-db" (172.18.0.3), port 5433 failed: Connection refused
-	Is the server running on that host and accepting TCP/IP connections?
-
-2025-12-24 07:36:28,222 - app.core.connection - INFO - Retrying in 5 seconds... (Attempt 3/5)
-2025-12-24 07:36:33,228 - app.core.connection - ERROR - PostgreSQL connection failed: connection to server at "wallet-db" (172.18.0.3), port 5433 failed: Connection refused
-	Is the server running on that host and accepting TCP/IP connections?
-
-2025-12-24 07:36:33,228 - app.core.connection - INFO - Retrying in 5 seconds... (Attempt 4/5)
-2025-12-24 07:36:38,231 - app.core.connection - ERROR - PostgreSQL connection failed: connection to server at "wallet-db" (172.18.0.3), port 5433 failed: Connection refused
-	Is the server running on that host and accepting TCP/IP connections?
-
-2025-12-24 07:36:38,232 - app.core.connection - INFO - Retrying in 5 seconds... (Attempt 5/5)
-2025-12-24 07:36:43,235 - app.core.database - CRITICAL - Failed to establish database connections: 500: Max retries exceeded for PostgreSQL connection
-2025-12-24 07:37:47,191 - app.core.connection - ERROR - PostgreSQL connection failed: connection to server at "wallet-db" (172.18.0.3), port 5433 failed: Connection refused
-	Is the server running on that host and accepting TCP/IP connections?
-
-2025-12-24 07:37:47,192 - app.core.connection - INFO - Retrying in 5 seconds... (Attempt 1/5)
-2025-12-24 07:37:52,193 - app.core.connection - ERROR - PostgreSQL connection failed: connection to server at "wallet-db" (172.18.0.3), port 5433 failed: Connection refused
-	Is the server running on that host and accepting TCP/IP connections?
-
-2025-12-24 07:37:52,194 - app.core.connection - INFO - Retrying in 5 seconds... (Attempt 2/5)
-2025-12-24 07:37:57,198 - app.core.connection - ERROR - PostgreSQL connection failed: connection to server at "wallet-db" (172.18.0.3), port 5433 failed: Connection refused
-	Is the server running on that host and accepting TCP/IP connections?
-
-2025-12-24 07:37:57,198 - app.core.connection - INFO - Retrying in 5 seconds... (Attempt 3/5)
-2025-12-24 07:38:02,201 - app.core.connection - ERROR - PostgreSQL connection failed: connection to server at "wallet-db" (172.18.0.3), port 5433 failed: Connection refused
-	Is the server running on that host and accepting TCP/IP connections?
-
-2025-12-24 07:38:02,201 - app.core.connection - INFO - Retrying in 5 seconds... (Attempt 4/5)
-2025-12-24 07:38:07,203 - app.core.connection - ERROR - PostgreSQL connection failed: connection to server at "wallet-db" (172.18.0.3), port 5433 failed: Connection refused
-	Is the server running on that host and accepting TCP/IP connections?
-
-2025-12-24 07:38:07,204 - app.core.connection - INFO - Retrying in 5 seconds... (Attempt 5/5)
-2025-12-24 07:38:12,206 - app.core.database - CRITICAL - Failed to establish database connections: 500: Max retries exceeded for PostgreSQL connection
-2025-12-24 07:38:54,428 - app.core.connection - INFO - PostgreSQL connection successful
-2025-12-24 07:38:54,484 - app.core.connection - INFO - MongoDB connection successful
-2025-12-24 07:38:54,484 - app.core.database - INFO - Database connections established successfully
-2025-12-24 07:49:28,346 - app.core.connection - INFO - PostgreSQL connection successful
-2025-12-24 07:49:28,379 - app.core.connection - INFO - MongoDB connection successful
-2025-12-24 07:49:28,379 - app.core.database - INFO - Database connections established successfully
-2025-12-24 07:50:03,341 - app.core.dependencies - ERROR - Error fetching user info: HTTPConnectionPool(host='localhost', port=8001): Max retries exceeded with url: /auth/me (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8001): Failed to establish a new connection: [Errno 111] Connection refused"))
-2025-12-24 07:52:38,924 - app.core.connection - INFO - PostgreSQL connection successful
-2025-12-24 07:52:38,949 - app.core.connection - INFO - MongoDB connection successful
-2025-12-24 07:52:38,949 - app.core.database - INFO - Database connections established successfully
-2025-12-24 07:52:44,015 - app.core.connection - INFO - PostgreSQL connection successful
-2025-12-24 07:52:44,040 - app.core.connection - INFO - MongoDB connection successful
-2025-12-24 07:52:44,040 - app.core.database - INFO - Database connections established successfully
-2025-12-24 07:52:45,376 - app.core.connection - INFO - PostgreSQL connection successful
-2025-12-24 07:52:45,399 - app.core.connection - INFO - MongoDB connection successful
-2025-12-24 07:52:45,400 - app.core.database - INFO - Database connections established successfully
-2025-12-24 07:52:53,996 - app.core.connection - INFO - PostgreSQL connection successful
-2025-12-24 07:52:54,019 - app.core.connection - INFO - MongoDB connection successful
-2025-12-24 07:52:54,019 - app.core.database - INFO - Database connections established successfully
-2025-12-24 07:52:55,579 - app.core.connection - INFO - PostgreSQL connection successful
-2025-12-24 07:52:55,607 - app.core.connection - INFO - MongoDB connection successful
-2025-12-24 07:52:55,607 - app.core.database - INFO - Database connections established successfully
-2025-12-24 07:55:10,794 - app.core.connection - INFO - PostgreSQL connection successful
-2025-12-24 07:55:10,820 - app.core.connection - INFO - MongoDB connection successful
-2025-12-24 07:55:10,820 - app.core.database - INFO - Database connections established successfully
-2025-12-24 07:55:32,034 - app.core.dependencies - ERROR - Error fetching user info: HTTPConnectionPool(host='auth-services', port=8001): Max retries exceeded with url: /auth/me (Caused by NameResolutionError("HTTPConnection(host='auth-services', port=8001): Failed to resolve 'auth-services' ([Errno -3] Temporary failure in name resolution)"))
-2025-12-24 08:02:29,501 - app.core.connection - INFO - PostgreSQL connection successful
-2025-12-24 08:02:29,530 - app.core.connection - INFO - MongoDB connection successful
-2025-12-24 08:02:29,531 - app.core.database - INFO - Database connections established successfully
-2025-12-24 08:04:53,624 - app.core.connection - INFO - PostgreSQL connection successful
-2025-12-24 08:04:53,653 - app.core.connection - INFO - MongoDB connection successful
-2025-12-24 08:04:53,654 - app.core.database - INFO - Database connections established successfully
-2025-12-24 08:08:04,842 - app.core.connection - INFO - PostgreSQL connection successful
-2025-12-24 08:08:04,872 - app.core.connection - INFO - MongoDB connection successful
-2025-12-24 08:08:04,872 - app.core.database - INFO - Database connections established successfully
+2025-12-25 00:42:38,218 - app.core.connection - INFO - Retrying in 5 seconds... (Attempt 5/5)
+2025-12-25 00:42:43,219 - app.core.database - CRITICAL - Failed to establish database connections: 500: Max retries exceeded for PostgreSQL connection
+2025-12-25 00:43:08,891 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-25 00:43:08,947 - app.core.connection - INFO - MongoDB connection successful
+2025-12-25 00:43:08,947 - app.core.database - INFO - Database connections established successfully
+2025-12-25 00:46:06,127 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-25 00:46:06,185 - app.core.connection - INFO - MongoDB connection successful
+2025-12-25 00:46:06,185 - app.core.database - INFO - Database connections established successfully
+2025-12-25 00:46:47,876 - app.repository.wallet_repository - INFO - Checked wallet existence for user_id 1: False
+2025-12-25 00:46:47,877 - app.routes.wallet_route - INFO - No wallet found for user_id 1
+2025-12-25 00:47:11,068 - app.core.dependencies - ERROR - Error fetching user info: list index out of range
+2025-12-25 00:47:42,669 - app.core.dependencies - ERROR - Error fetching user info: list index out of range
+2025-12-25 00:48:53,880 - app.core.dependencies - ERROR - Error fetching user info: list index out of range
+2025-12-25 00:50:02,688 - app.core.dependencies - ERROR - Failed to fetch user info from auth service
+2025-12-25 00:50:02,688 - app.core.dependencies - ERROR - Error fetching user info: 401: Failed to fetch user info
+2025-12-25 00:50:11,464 - app.core.dependencies - ERROR - Error fetching user info: list index out of range
+2025-12-25 00:51:37,339 - app.core.dependencies - ERROR - Error fetching user info: list index out of range
+2025-12-25 00:52:19,897 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-25 00:52:19,921 - app.core.connection - INFO - MongoDB connection successful
+2025-12-25 00:52:19,921 - app.core.database - INFO - Database connections established successfully
+2025-12-25 00:52:23,499 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-25 00:52:23,523 - app.core.connection - INFO - MongoDB connection successful
+2025-12-25 00:52:23,523 - app.core.database - INFO - Database connections established successfully
+2025-12-25 00:52:30,243 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-25 00:52:30,270 - app.core.connection - INFO - MongoDB connection successful
+2025-12-25 00:52:30,270 - app.core.database - INFO - Database connections established successfully
+2025-12-25 00:52:38,128 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-25 00:52:38,154 - app.core.connection - INFO - MongoDB connection successful
+2025-12-25 00:52:38,154 - app.core.database - INFO - Database connections established successfully
+2025-12-25 00:54:42,567 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-25 00:54:42,589 - app.core.connection - INFO - MongoDB connection successful
+2025-12-25 00:54:42,590 - app.core.database - INFO - Database connections established successfully
+2025-12-25 00:54:47,897 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-25 00:54:47,918 - app.core.connection - INFO - MongoDB connection successful
+2025-12-25 00:54:47,918 - app.core.database - INFO - Database connections established successfully
+2025-12-25 00:54:50,725 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-25 00:54:50,745 - app.core.connection - INFO - MongoDB connection successful
+2025-12-25 00:54:50,745 - app.core.database - INFO - Database connections established successfully
+2025-12-25 00:54:57,962 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-25 00:54:58,006 - app.core.connection - INFO - MongoDB connection successful
+2025-12-25 00:54:58,006 - app.core.database - INFO - Database connections established successfully
+2025-12-25 00:55:00,374 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-25 00:55:00,395 - app.core.connection - INFO - MongoDB connection successful
+2025-12-25 00:55:00,396 - app.core.database - INFO - Database connections established successfully
+2025-12-25 00:56:30,531 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-25 00:56:30,583 - app.core.connection - INFO - MongoDB connection successful
+2025-12-25 00:56:30,584 - app.core.database - INFO - Database connections established successfully
+2025-12-25 00:56:47,415 - app.repository.wallet_repository - INFO - Checked wallet existence for user_id 1: False
+2025-12-25 00:56:47,427 - app.repository.wallet_repository - INFO - Created wallet for user_id 1
+2025-12-25 00:56:47,427 - app.routes.wallet_route - INFO - Creating wallet for user_id 1
+2025-12-25 00:56:47,427 - app.routes.wallet_route - ERROR - Error creating wallet for user_id 1: 'Wallet' object is not subscriptable
+2025-12-25 00:59:41,757 - app.repository.wallet_repository - INFO - Checked wallet existence for user_id 1: True
+2025-12-25 00:59:41,757 - app.routes.wallet_route - INFO - Wallet already exists for user_id 1
+2025-12-28 07:02:58,722 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-28 07:02:58,756 - app.core.connection - INFO - MongoDB connection successful
+2025-12-28 07:02:58,756 - app.core.database - INFO - Database connections established successfully
+2025-12-28 07:23:26,468 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-28 07:23:26,490 - app.core.connection - INFO - MongoDB connection successful
+2025-12-28 07:23:26,491 - app.core.database - INFO - Database connections established successfully
+2025-12-28 07:42:55,007 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-28 07:42:55,083 - app.core.connection - INFO - MongoDB connection successful
+2025-12-28 07:42:55,083 - app.core.database - INFO - Database connections established successfully
+2025-12-29 06:06:55,438 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-29 06:06:55,465 - app.core.connection - INFO - MongoDB connection successful
+2025-12-29 06:06:55,465 - app.core.database - INFO - Database connections established successfully
+2025-12-29 06:11:23,986 - app.core.connection - INFO - PostgreSQL connection successful
+2025-12-29 06:11:24,063 - app.core.connection - INFO - MongoDB connection successful
+2025-12-29 06:11:24,064 - app.core.database - INFO - Database connections established successfully
+2025-12-29 06:16:25,641 - app.repository.wallet_repository - INFO - Checked wallet existence for user_id 1: False
+2025-12-29 06:16:25,651 - app.repository.wallet_repository - INFO - Created wallet for user_id 1
+2025-12-29 06:16:25,652 - app.routes.wallet_route - INFO - Creating wallet for user_id 1
+2025-12-29 06:16:25,652 - app.routes.wallet_route - ERROR - Error creating wallet for user_id 1: 'Wallet' object is not subscriptable
+2025-12-29 06:16:49,604 - app.repository.wallet_repository - INFO - Checked wallet existence for user_id 1: True
+2025-12-29 06:16:49,604 - app.routes.wallet_route - INFO - Wallet already exists for user_id 1

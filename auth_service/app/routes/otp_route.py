@@ -45,13 +45,13 @@ def validate_otp_endpoint(otp_data: OTPValidationSchema, db=Depends(get_db)):
         if is_verified:
             access_token = create_access_token(
                 data={
-                    "sub" : str(user.id),
+                    "sub": str(user.id),
                     "user": {
                         "user_id": user.id,
                         "username": user.username,
                         "phone": user.phone,
                         "is_verified": True,
-                    }
+                    },
                 }
             )
             logger.info(f"Phone number {otp_data.phone} is already verified")
@@ -67,12 +67,13 @@ def validate_otp_endpoint(otp_data: OTPValidationSchema, db=Depends(get_db)):
 
         access_token = create_access_token(
             data={
-                "sub": {
+                "sub": str(user.id),
+                "user": {
                     "user_id": user.id,
                     "username": user.username,
                     "phone": user.phone,
                     "is_verified": True,
-                }
+                },
             }
         )
 

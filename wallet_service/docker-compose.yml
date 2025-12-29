@@ -11,7 +11,7 @@ services:
       - mongodb
 
     environment:
-      - DATABASE_URL=postgresql://admin:1@wallet-db:5433/wallet-db
+      - DATABASE_URL=postgresql://admin:1@wallet-db:5432/wallet-db
       - REDIS_HOST=wallet-redis
       - REDIS_PORT=6380
       - MONGO_HOST=wallet-mongo

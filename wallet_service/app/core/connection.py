@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 def pg_connect_with_retry(max_retries=5, delay=5):
 
     POSTGRES_HOST = os.getenv("POSTGRES_HOST", "localhost")
-    POSTGRES_PORT = os.getenv("POSTGRES_PORT", "5433")
+    POSTGRES_PORT = int(os.getenv("POSTGRES_PORT", "5432"))
     POSTGRES_USER = os.getenv("POSTGRES_USER", "admin")
     POSTGRES_PASSWORD = os.getenv("POSTGRES_PASSWORD", "1")
     POSTGRES_DB = os.getenv("POSTGRES_DB", "wallet-db")

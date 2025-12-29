@@ -60,3 +60,5 @@ def log_wallet_transaction(
     except Exception as e:
         logger.error(f"Error logging wallet transaction event: {e}")
         raise HTTPException(status_code=500, detail="Internal server error")
+    
+
